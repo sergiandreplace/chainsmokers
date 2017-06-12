@@ -1,10 +1,10 @@
-package com.blindbugs.chainsmoker.infrastructure
+package com.blindbugs.chainsmokers.infrastructure
 
-import com.blindbugs.chainsmoker.data.datasource.EntryMemoryDataSource
-import com.blindbugs.chainsmoker.data.repository.EntryRepository
-import com.blindbugs.chainsmoker.domain.model.EntryCollection
-import com.blindbugs.chainsmoker.domain.usecase.di.CreateEntryUseCase
-import com.blindbugs.chainsmoker.ui.main.MainPresenter
+import com.blindbugs.chainsmokers.data.datasource.EntryMemoryDataSource
+import com.blindbugs.chainsmokers.data.repository.EntryRepository
+import com.blindbugs.chainsmokers.domain.model.EntryCollection
+import com.blindbugs.chainsmokers.domain.usecase.di.CreateEntryUseCase
+import com.blindbugs.chainsmokers.ui.main.MainPresenter
 
 class ServiceLocator private constructor() {
     init {

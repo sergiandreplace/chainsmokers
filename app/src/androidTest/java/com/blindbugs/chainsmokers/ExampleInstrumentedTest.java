@@ -1,4 +1,4 @@
-package com.blindbugs.chainsmoker;
+package com.blindbugs.chainsmokers;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

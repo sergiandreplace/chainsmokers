@@ -1,4 +1,4 @@
-package com.blindbugs.chainsmoker;
+package com.blindbugs.chainsmokers;
 
 import org.junit.Test;
 

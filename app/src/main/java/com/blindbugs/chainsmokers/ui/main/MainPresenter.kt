@@ -1,6 +1,6 @@
-package com.blindbugs.chainsmoker.ui.main
+package com.blindbugs.chainsmokers.ui.main
 
-import com.blindbugs.chainsmoker.domain.usecase.CreateEntryUseCase
+import com.blindbugs.chainsmokers.domain.usecase.CreateEntryUseCase
 
 class MainPresenter(val view: MainPresenterView,
                     val createEntryUseCase: CreateEntryUseCase) {

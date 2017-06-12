@@ -1,10 +1,10 @@
-package com.blindbugs.chainsmoker.ui.main
+package com.blindbugs.chainsmokers.ui.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.blindbugs.chainsmoker.R
-import com.blindbugs.chainsmoker.infrastructure.ServiceLocator
+import com.blindbugs.chainsmokers.R
+import com.blindbugs.chainsmokers.infrastructure.ServiceLocator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainPresenter.MainPresenterView {
