@@ -1,4 +1,4 @@
-package com.blindbugs.chainsmokers.domain.usecase.di
+package com.blindbugs.chainsmokers.domain.usecase
 
 import com.blindbugs.chainsmokers.domain.model.EntryCollection
 

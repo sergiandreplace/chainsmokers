@@ -2,13 +2,13 @@ package com.blindbugs.chainsmokers.ui.main
 
 import com.blindbugs.chainsmokers.domain.usecase.CreateEntryUseCase
 
-class MainPresenter(val view: MainPresenterView,
-                    val createEntryUseCase: CreateEntryUseCase) {
+class MainPresenter(val createEntryUseCase: CreateEntryUseCase) {
+    var view: MainPresenterView? = null
 
     fun createEntry() {
-        val now = System.currentTimeMillis();
+        val now = System.currentTimeMillis()
         createEntryUseCase.execute(now)
-        view.onEntryCreated()
+        view?.onEntryCreated()
     }
 
     interface MainPresenterView {
