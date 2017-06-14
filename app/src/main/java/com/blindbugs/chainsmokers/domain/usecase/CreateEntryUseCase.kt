@@ -7,7 +7,7 @@ import javax.inject.Inject
 class CreateEntryUseCase @Inject constructor(val entryCollection: EntryCollection) {
 
   fun execute(time: Long): Entry {
-    return entryCollection.saveEntry(Entry(time))
+    return entryCollection.execute(Entry(time))
   }
 }
 

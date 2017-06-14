@@ -14,6 +14,4 @@ interface AppComponent {
 
   fun plus(mainActivityModule: MainActivityModule): MainActivityComponent
 
-
-
 }

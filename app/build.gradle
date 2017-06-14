@@ -28,6 +28,9 @@ android {
 }
 
 dependencies {
+
+    implementation "org.jetbrains.anko:anko:0.10.1"
+
     def androidSupport = '25.4.0'
     implementation "com.android.support:design:$androidSupport"
     implementation "com.android.support:appcompat-v7:$androidSupport"
