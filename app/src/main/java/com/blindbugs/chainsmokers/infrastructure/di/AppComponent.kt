@@ -1,8 +1,9 @@
 package com.blindbugs.chainsmokers.infrastructure.di
 
 import com.blindbugs.chainsmokers.ChainSmokersApplication
-import com.blindbugs.chainsmokers.infrastructure.di.main.MainActivityComponent
-import com.blindbugs.chainsmokers.infrastructure.di.main.MainActivityModule
+import com.blindbugs.chainsmokers.infrastructure.di.activity.MainActivityComponent
+import com.blindbugs.chainsmokers.infrastructure.di.activity.MainActivityModule
+import com.blindbugs.chainsmokers.infrastructure.di.data.DataModule
 import dagger.Component
 import javax.inject.Singleton
 
