@@ -3,7 +3,7 @@ package com.blindbugs.chainsmokers.ui.main
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.blindbugs.chainsmokers.R
-import com.blindbugs.chainsmokers.domain.model.Entry
+import com.blindbugs.chainsmokers.domain.model.Cigarette
 import com.blindbugs.chainsmokers.infrastructure.di.activity.MainActivityModule
 import com.blindbugs.chainsmokers.infrastructure.extension.app
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,13 +28,13 @@ class MainActivity : AppCompatActivity(), MainPresenter.MainPresenterView {
 
   }
 
-  override fun onEntriesByDayUpdated(days: List<Entry>) {
+  override fun onEntriesByDayUpdated(days: List<Cigarette>) {
     val output = StringBuilder()
     days.forEach { output.appendln(it.timestamp) }
     longToast(output)
   }
 
-  override fun onEntryCreated(entry: Entry) {
-    toast("Entry created at " + entry.timestamp)
+  override fun onEntryCreated(cigarette: Cigarette) {
+    toast("Cigarette created at " + cigarette.timestamp)
   }
 }

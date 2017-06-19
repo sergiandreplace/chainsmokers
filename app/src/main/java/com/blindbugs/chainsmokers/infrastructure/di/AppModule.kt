@@ -11,8 +11,5 @@ import javax.inject.Singleton
 class AppModule(val app: ChainSmokersApplication) {
   @Provides @Singleton fun app() = app
 
-  @Provides @Singleton
-  fun database(app: ChainSmokersApplication): AppDatabase
-    = Room.databaseBuilder(app, AppDatabase::class.java, "chainsmokers").build()
 
 }

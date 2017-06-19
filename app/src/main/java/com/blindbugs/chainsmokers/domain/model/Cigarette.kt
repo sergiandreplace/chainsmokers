@@ -1,3 +1,3 @@
 package com.blindbugs.chainsmokers.domain.model
 
-data class Entry(val timestamp: Long)
+data class Cigarette(val timestamp: Long)

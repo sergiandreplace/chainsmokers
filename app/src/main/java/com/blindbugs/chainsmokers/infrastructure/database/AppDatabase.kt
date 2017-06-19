@@ -2,10 +2,10 @@ package com.blindbugs.chainsmokers.infrastructure.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import com.blindbugs.chainsmokers.data.datasource.EntryDao
-import com.blindbugs.chainsmokers.data.datasource.model.EntryEntity
+import com.blindbugs.chainsmokers.data.datasource.CigaretteDao
+import com.blindbugs.chainsmokers.data.datasource.model.CigaretteEntity
 
-@Database(entities = arrayOf(EntryEntity::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(CigaretteEntity::class), version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-  abstract fun entryDao(): EntryDao
+  abstract fun cigaretteDao(): CigaretteDao
 }

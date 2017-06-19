@@ -1,8 +1,6 @@
 package com.blindbugs.chainsmokers.infrastructure.di
 
 import com.blindbugs.chainsmokers.ChainSmokersApplication
-import com.blindbugs.chainsmokers.data.datasource.EntryDao
-import com.blindbugs.chainsmokers.infrastructure.database.AppDatabase
 import com.blindbugs.chainsmokers.infrastructure.di.activity.MainActivityComponent
 import com.blindbugs.chainsmokers.infrastructure.di.activity.MainActivityModule
 import com.blindbugs.chainsmokers.infrastructure.di.data.DataModule
@@ -16,7 +14,4 @@ interface AppComponent {
 
   fun plus(mainActivityModule: MainActivityModule): MainActivityComponent
 
-  fun database(): AppDatabase
-
-  fun entryDao(): EntryDao
 }

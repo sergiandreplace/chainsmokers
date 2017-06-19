@@ -4,14 +4,14 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
-import com.blindbugs.chainsmokers.data.datasource.model.EntryEntity
+import com.blindbugs.chainsmokers.data.datasource.model.CigaretteEntity
 
 @Dao
-interface EntryDao {
+interface CigaretteDao {
 
   @Insert(onConflict = REPLACE)
-  fun insert(entryEntity: EntryEntity)
+  fun insert(cigaretteEntity: CigaretteEntity)
 
-  @Query("Select id, datetime from entries")
-  fun getEntries(): List<EntryEntity>
+  @Query("Select id, datetime from cigarettes")
+  fun getAll(): List<CigaretteEntity>
 }
