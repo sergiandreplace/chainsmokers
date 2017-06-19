@@ -9,6 +9,7 @@ import com.blindbugs.chainsmokers.infrastructure.extension.app
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
+import org.threeten.bp.LocalDate
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainPresenter.MainPresenterView {
@@ -28,9 +29,10 @@ class MainActivity : AppCompatActivity(), MainPresenter.MainPresenterView {
 
   }
 
-  override fun onEntriesByDayUpdated(days: List<Cigarette>) {
+  override fun onEntriesByDayUpdated(days: Map<LocalDate, Long>) {
     val output = StringBuilder()
-    days.forEach { output.appendln(it.timestamp) }
+    toast("Items : " + days.size)
+    days.forEach { output.appendln("${it.key}: ${it.value}") }
     longToast(output)
   }
 

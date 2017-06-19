@@ -1,3 +1,5 @@
 package com.blindbugs.chainsmokers.domain.model
 
-data class Cigarette(val timestamp: Long)
+import org.threeten.bp.LocalDateTime
+
+data class Cigarette(val timestamp: LocalDateTime)
