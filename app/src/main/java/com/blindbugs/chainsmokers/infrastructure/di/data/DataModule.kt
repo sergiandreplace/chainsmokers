@@ -1,18 +1,20 @@
 package com.blindbugs.chainsmokers.infrastructure.di.data
 
-import com.blindbugs.chainsmokers.data.datasource.EntryMemoryDataSource
+import com.blindbugs.chainsmokers.data.datasource.EntryDao
+import com.blindbugs.chainsmokers.data.datasource.mapper.EntryMapper
 import com.blindbugs.chainsmokers.data.repository.EntryRepository
 import com.blindbugs.chainsmokers.domain.model.EntryCollection
+import com.blindbugs.chainsmokers.infrastructure.database.AppDatabase
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
 class DataModule {
   @Provides
-  fun entryCollection(entryMemoryDataSource: EntryMemoryDataSource): EntryCollection = EntryRepository(entryMemoryDataSource)
+  fun entryCollection(entryDao: EntryDao, entryMapper: EntryMapper): EntryCollection
+    = EntryRepository(entryDao, entryMapper)
 
   @Provides
-  @Singleton
-  fun entryMemoryDataSource() = EntryMemoryDataSource()
+  fun entryDao(appDatabase: AppDatabase) = appDatabase.entryDao()
+
 }

@@ -1,22 +1,25 @@
 package com.blindbugs.chainsmokers.ui.main
 
-import com.blindbugs.chainsmokers.domain.model.Day
 import com.blindbugs.chainsmokers.domain.model.Entry
 import com.blindbugs.chainsmokers.domain.usecase.CreateEntryUseCase
-import com.blindbugs.chainsmokers.domain.usecase.GetEntriesByDayUseCase
+import com.blindbugs.chainsmokers.domain.usecase.GetEntries
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import org.threeten.bp.LocalDate
 import javax.inject.Inject
 
-class MainPresenter @Inject constructor(val createEntryUseCase: CreateEntryUseCase, val getEntriesByDayUseCase: GetEntriesByDayUseCase) {
+class MainPresenter @Inject constructor(val createEntryUseCase: CreateEntryUseCase, val getEntries: GetEntries) {
   var view: MainPresenterView? = null
 
   fun createEntry() {
     val now = System.currentTimeMillis()
-    val entry = createEntryUseCase.execute(now)
-    view?.onEntryCreated(entry)
-    updateEntries()
+    doAsync {
+      val entry = createEntryUseCase.execute(now)
+      uiThread {
+        view?.onEntryCreated(entry)
+
+        updateEntries()
+      }
+    }
   }
 
   fun init() {
@@ -25,7 +28,7 @@ class MainPresenter @Inject constructor(val createEntryUseCase: CreateEntryUseCa
 
   private fun updateEntries() {
     doAsync {
-      val entriesByDay = getEntriesByDayUseCase.execute()
+      val entriesByDay = getEntries.execute()
       uiThread {
         view?.onEntriesByDayUpdated(entriesByDay)
       }
@@ -35,7 +38,7 @@ class MainPresenter @Inject constructor(val createEntryUseCase: CreateEntryUseCa
 
   interface MainPresenterView {
     fun onEntryCreated(entry: Entry)
-    fun onEntriesByDayUpdated(days: Map<LocalDate, Day>)
+    fun onEntriesByDayUpdated(days: List<Entry>)
   }
 
 }
